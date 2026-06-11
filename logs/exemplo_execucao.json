@@ -1,0 +1,23 @@
+{
+  "pergunta": "Existe correlação entre idade e horas trabalhadas por semana?",
+  "resposta": "A correlação de Pearson entre **idade** e **horas trabalhadas por semana** é de aproximadamente **0,069**.\n\n### Interpretação\n\nEsse valor é muito baixo, bem próximo de zero. Isso indica que **não existe uma correlação linear significativa** entre as duas variáveis. Em outras palavras:\n\n- A idade de uma pessoa não está relacionada de forma linear com a quantidade de horas que ela trabalha por semana.\n- Jovens e mais velhos podem trabalhar tanto poucas quanto muitas horas, sem um padrão claro.\n\nPortanto, a resposta é: **não há correlação relevante entre idade e horas trabalhadas por semana** nesse dataset.",
+  "logs": [
+    {
+      "iteracao": 1,
+      "tool": "correlacao",
+      "argumentos": {
+        "coluna_a": "age",
+        "coluna_b": "hours_per_week",
+        "metodo": "pearson"
+      },
+      "resultado": {
+        "coluna_a": "age",
+        "coluna_b": "hours_per_week",
+        "metodo": "pearson",
+        "correlacao": 0.06875570750955737
+      }
+    }
+  ],
+  "latencia_segundos": 4.16,
+  "tool_calls": 1
+}
