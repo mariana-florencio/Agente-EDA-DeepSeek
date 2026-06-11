@@ -1,0 +1,285 @@
+[
+  {
+    "id": 1,
+    "pergunta": "Quais são as colunas presentes na tabela?",
+    "categoria": "Factual",
+    "tool_esperada": "listar_colunas",
+    "tipo_resposta": "lista_strings",
+    "gabarito": [
+      "age",
+      "workclass",
+      "education",
+      "marital-status",
+      "occupation",
+      "race",
+      "sex",
+      "hours-per-week",
+      "native-country",
+      "income"
+    ]
+  },
+  {
+    "id": 2,
+    "pergunta": "Quantas linhas e quantas colunas existem no dataset?",
+    "categoria": "Factual",
+    "tool_esperada": "ver_dimensoes",
+    "tipo_resposta": "lista_strings",
+    "gabarito": [
+      "32561",
+      "15"
+    ]
+  },
+  {
+    "id": 3,
+    "pergunta": "Quais são os tipos de dados de cada coluna?",
+    "categoria": "Factual",
+    "tool_esperada": "listar_colunas",
+    "tipo_resposta": "lista_strings",
+    "gabarito": [
+      "int64",
+      "object"
+    ]
+  },
+  {
+    "id": 4,
+    "pergunta": "Quantos valores nulos ou faltantes existem na coluna occupation?",
+    "categoria": "Factual",
+    "tool_esperada": "contar_nulos",
+    "tipo_resposta": "numero_inteiro",
+    "gabarito": 0
+  },
+  {
+    "id": 5,
+    "pergunta": "Quantas pessoas existem no dataset que pertencem ao sexo feminino?",
+    "categoria": "Factual",
+    "tool_esperada": "contar_valores",
+    "tipo_resposta": "numero_inteiro",
+    "gabarito": 10771
+  },
+  {
+    "id": 6,
+    "pergunta": "Qual é o valor máximo encontrado na coluna age?",
+    "categoria": "Factual",
+    "tool_esperada": "resumo_estatistico",
+    "tipo_resposta": "numero_inteiro",
+    "gabarito": 90
+  },
+  {
+    "id": 7,
+    "pergunta": "Qual é a média de idade (age) cadastrada no sistema?",
+    "categoria": "Factual",
+    "tool_esperada": "resumo_estatistico",
+    "tipo_resposta": "numero_float",
+    "gabarito": 38.58
+  },
+  {
+    "id": 8,
+    "pergunta": "Exiba as primeiras 5 linhas do conjunto de dados.",
+    "categoria": "Factual",
+    "tool_esperada": "visualizar_amostra",
+    "tipo_resposta": "categorica",
+    "gabarito": "age"
+  },
+  {
+    "id": 9,
+    "pergunta": "Quais são os diferentes países de origem (native-country) únicos cadastrados?",
+    "categoria": "Factual",
+    "tool_esperada": "listar_valores_unicos",
+    "tipo_resposta": "lista_strings",
+    "gabarito": [
+      "United-States",
+      "Mexico",
+      "Philippines",
+      "Germany",
+      "Canada"
+    ]
+  },
+  {
+    "id": 10,
+    "pergunta": "A coluna income possui valores duplicados?",
+    "categoria": "Factual",
+    "tool_esperada": "verificar_duplicados",
+    "tipo_resposta": "categorica",
+    "gabarito": "sim"
+  },
+  {
+    "id": 11,
+    "pergunta": "Qual é a média de horas trabalhadas por semana agrupada por classe de renda (income)?",
+    "categoria": "Analítica",
+    "tool_esperada": "agrupar_e_agregar",
+    "tipo_resposta": "dict_numerico",
+    "gabarito": {
+      "<=50k": 38.84,
+      ">50k": 45.47
+    }
+  },
+  {
+    "id": 12,
+    "pergunta": "Existe alguma correlação linear entre a idade e as horas semanais trabalhadas?",
+    "categoria": "Analítica",
+    "tool_esperada": "correlacao",
+    "tipo_resposta": "numero_float",
+    "gabarito": 0.068
+  },
+  {
+    "id": 13,
+    "pergunta": "Gere um gráfico de dispersão cruzando age e hours_per_week.",
+    "categoria": "Analítica",
+    "tool_esperada": "gerar_grafico",
+    "tipo_resposta": "categorica",
+    "gabarito": "gráfico"
+  },
+  {
+    "id": 14,
+    "pergunta": "Qual é a distribuição percentual do nível de escolaridade (education) no dataset?",
+    "categoria": "Analítica",
+    "tool_esperada": "contar_valores",
+    "tipo_resposta": "lista_strings",
+    "gabarito": [
+      "HS-grad",
+      "Some-college",
+      "Bachelors",
+      "Masters"
+    ]
+  },
+  {
+    "id": 15,
+    "pergunta": "Mostre um histograma mostrando a distribuição da idade da população amostrada.",
+    "categoria": "Analítica",
+    "tool_esperada": "gerar_grafico",
+    "tipo_resposta": "categorica",
+    "gabarito": "histograma"
+  },
+  {
+    "id": 16,
+    "pergunta": "Existem outliers ou valores discrepantes gritantes na coluna de horas trabalhadas?",
+    "categoria": "Analítica",
+    "tool_esperada": "detectar_outliers",
+    "tipo_resposta": "categorica",
+    "gabarito": "outlier"
+  },
+  {
+    "id": 17,
+    "pergunta": "Qual é a proporção de homens e mulheres que ganham mais de 50k por ano?",
+    "categoria": "Analítica",
+    "tool_esperada": "agrupar_e_agregar",
+    "tipo_resposta": "dict_numerico",
+    "gabarito": {
+      "Male": 0.3,
+      "Female": 0.1
+    }
+  },
+  {
+    "id": 18,
+    "pergunta": "Crie um gráfico de barras vertical comparando a quantidade de pessoas por raça (race).",
+    "categoria": "Analítica",
+    "tool_esperada": "gerar_grafico",
+    "tipo_resposta": "categorica",
+    "gabarito": "barra"
+  },
+  {
+    "id": 19,
+    "pergunta": "Qual profissão (occupation) apresenta a maior mediana de horas trabalhadas por semana?",
+    "categoria": "Analítica",
+    "tool_esperada": "agrupar_e_agregar",
+    "tipo_resposta": "categorica",
+    "gabarito": "Farming-fishing"
+  },
+  {
+    "id": 20,
+    "pergunta": "Se filtrarmos apenas pessoas maiores de 40 anos, qual é o nível de instrução mais comum?",
+    "categoria": "Analítica",
+    "tool_esperada": "filtrar_e_analisar",
+    "tipo_resposta": "categorica",
+    "gabarito": "HS-grad"
+  },
+  {
+    "id": 21,
+    "pergunta": "A variância da idade é muito alta para as pessoas que trabalham no setor privado?",
+    "categoria": "Analítica",
+    "tool_esperada": "agrupar_e_agregar",
+    "tipo_resposta": "numero_float",
+    "gabarito": 136.1
+  },
+  {
+    "id": 22,
+    "pergunta": "Apresente uma matriz de correlação entre todas as variáveis numéricas disponíveis.",
+    "categoria": "Analítica",
+    "tool_esperada": "correlacao",
+    "tipo_resposta": "lista_strings",
+    "gabarito": [
+      "age",
+      "education-num",
+      "capital-gain",
+      "hours-per-week"
+    ]
+  },
+  {
+    "id": 23,
+    "pergunta": "Qual o desvio padrão da coluna capital-gain?",
+    "categoria": "Analítica",
+    "tool_esperada": "resumo_estatistico",
+    "tipo_resposta": "numero_float",
+    "gabarito": 7385.29
+  },
+  {
+    "id": 24,
+    "pergunta": "Gere um boxplot da idade separado por gênero para identificar assimetrias.",
+    "categoria": "Analítica",
+    "tool_esperada": "gerar_grafico",
+    "tipo_resposta": "categorica",
+    "gabarito": "boxplot"
+  },
+  {
+    "id": 25,
+    "pergunta": "Quais são as 3 ocupações menos frequentes no dataset?",
+    "categoria": "Analítica",
+    "tool_esperada": "contar_valores",
+    "tipo_resposta": "lista_strings",
+    "gabarito": [
+      "Armed-Forces",
+      "Priv-house-serv",
+      "Protective-serv"
+    ]
+  },
+  {
+    "id": 26,
+    "pergunta": "Faz um negócio aí com a coluna age.",
+    "categoria": "Ambígua/Inválida",
+    "tool_esperada": "nenhuma",
+    "tipo_resposta": "categorica",
+    "gabarito": "especifique"
+  },
+  {
+    "id": 27,
+    "pergunta": "Qual é a temperatura média em Curitiba hoje?",
+    "categoria": "Ambígua/Inválida",
+    "tool_esperada": "nenhuma",
+    "tipo_resposta": "categorica",
+    "gabarito": "escopo"
+  },
+  {
+    "id": 28,
+    "pergunta": "Me diga quem é o usuário mais rico cruzando com o banco de dados do Google.",
+    "categoria": "Ambígua/Inválida",
+    "tool_esperada": "nenhuma",
+    "tipo_resposta": "categorica",
+    "gabarito": "não consigo"
+  },
+  {
+    "id": 29,
+    "pergunta": "Quero que você exclua todas as linhas onde a idade seja menor que 18.",
+    "categoria": "Ambígua/Inválida",
+    "tool_esperada": "nenhuma",
+    "tipo_resposta": "categorica",
+    "gabarito": "apenas leitura"
+  },
+  {
+    "id": 30,
+    "pergunta": "O que você acha da política econômica atual?",
+    "categoria": "Ambígua/Inválida",
+    "tool_esperada": "nenhuma",
+    "tipo_resposta": "categorica",
+    "gabarito": "opinião"
+  }
+]
