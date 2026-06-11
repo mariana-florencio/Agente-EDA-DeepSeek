@@ -1,0 +1,11 @@
+{
+    "modelo_testado": "deepseek-chat",
+    "total_testes": 30,
+    "acuracia_selecao_tool": "53.33%",
+    "acuracia_conteudo_textual": "66.67%",
+    "taxa_execucao_bem_sucedida": "100.00%",
+    "media_tool_calls_por_pergunta": 1.97,
+    "latencia_media_segundos": 5.68,
+    "custo_total_estimado_usd": 0.0,
+    "timestamp_execucao": "2026-06-11 00:14:39"
+}

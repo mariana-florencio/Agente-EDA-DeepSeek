@@ -1,0 +1,465 @@
+id,pergunta,categoria,tool_esperada,tool_utilizada,acertou_tool,tipo_resposta,acertou_conteudo,latencia,tool_calls,resposta_agente
+1,Quais são as colunas presentes na tabela?,Factual,listar_colunas,listar_colunas,1,lista_strings,1,4.618,1,"A tabela **Adult Income** possui as seguintes **15 colunas**:
+
+| Coluna | Tipo |
+|--------|------|
+| `age` | int64 (numérica) |
+| `workclass` | object (categórica) |
+| `fnlwgt` | int64 (numérica) |
+| `education` | object (categórica) |
+| `education_num` | int64 (numérica) |
+| `marital_status` | object (categórica) |
+| `occupation` | object (categórica) |
+| `relationship` | object (categórica) |
+| `race` | object (categórica) |
+| `sex` | object (categórica) |
+| `capital_gain` | int64 (numérica) |
+| `capital_loss` | int64 (numérica) |
+| `hours_per_week` | int64 (numérica) |
+| `native_country` | object (categórica) |
+| `income` | object (categórica) |
+
+**Resumo:** São 15 colunas no total, sendo:
+- **6 colunas numéricas** (`age`, `fnlwgt`, `education_num`, `capital_gain`, `capital_loss`, `hours_per_week`)
+- **9 colunas categóricas** (texto), como `workclass`, `education`, `marital_status`, `occupation`, `relationship`, `race`, `sex`, `native_country` e `income` (que é a variável alvo, indicando se a renda é >50K ou <=50K)."
+2,Quantas linhas e quantas colunas existem no dataset?,Factual,ver_dimensoes,listar_colunas,0,lista_strings,0,4.46,2,"Com base nos dados obtidos, temos:
+
+- **Quantidade de linhas**: **32.561**
+- **Quantidade de colunas**: **15**
+
+Resumindo:
+- O dataset **Adult Income** possui **32.561 linhas** (registros) e **15 colunas** (variáveis).
+- As colunas incluem informações demográficas e ocupacionais como idade, escolaridade, ocupação, sexo, raça, horas trabalhadas por semana, país de origem, além da variável alvo **income** (renda, com valores `<=50K` ou `>50K`)."
+3,Quais são os tipos de dados de cada coluna?,Factual,listar_colunas,listar_colunas,1,lista_strings,1,4.527,1,"Aqui estão os tipos de dados de cada coluna do dataset **Adult Income**:
+
+| Coluna | Tipo |
+|---|---|
+| **age** | `int64` (numérico inteiro) |
+| **workclass** | `object` (texto/categórico) |
+| **fnlwgt** | `int64` (numérico inteiro) |
+| **education** | `object` (texto/categórico) |
+| **education_num** | `int64` (numérico inteiro) |
+| **marital_status** | `object` (texto/categórico) |
+| **occupation** | `object` (texto/categórico) |
+| **relationship** | `object` (texto/categórico) |
+| **race** | `object` (texto/categórico) |
+| **sex** | `object` (texto/categórico) |
+| **capital_gain** | `int64` (numérico inteiro) |
+| **capital_loss** | `int64` (numérico inteiro) |
+| **hours_per_week** | `int64` (numérico inteiro) |
+| **native_country** | `object` (texto/categórico) |
+| **income** | `object` (texto/categórico) |
+
+**Resumo:** O dataset possui **15 colunas**, sendo:
+- **6 colunas numéricas inteiras** (`int64`): age, fnlwgt, education_num, capital_gain, capital_loss, hours_per_week
+- **9 colunas categóricas/texto** (`object`): workclass, education, marital_status, occupation, relationship, race, sex, native_country e income"
+4,Quantos valores nulos ou faltantes existem na coluna occupation?,Factual,contar_nulos,descrever_dados,0,numero_inteiro,0,5.33,2,"Agora sim! Na coluna **occupation**, há **1.843 registros** com o valor `""?""`, que é a forma como este dataset representa valores faltantes/desconhecidos.
+
+**Resposta:** Existem **1.843 valores ausentes** (representados como `""?""`) na coluna **occupation**, o que corresponde a cerca de **5,66%** do total de 32.561 registros do dataset."
+5,Quantas pessoas existem no dataset que pertencem ao sexo feminino?,Factual,contar_valores,filtrar,0,numero_inteiro,0,2.538,1,"No dataset **Adult Income**, existem **10.771 pessoas do sexo feminino**."
+6,Qual é o valor máximo encontrado na coluna age?,Factual,resumo_estatistico,descrever_dados,0,numero_inteiro,1,2.198,1,O valor **máximo** encontrado na coluna **age** (idade) é **90 anos**.
+7,Qual é a média de idade (age) cadastrada no sistema?,Factual,resumo_estatistico,descrever_dados,0,numero_float,1,3.185,1,"A **média de idade (age)** cadastrada no sistema é de aproximadamente **38,58 anos** (mais precisamente **38,58**).
+
+Com base nos dados:
+- **Total de registros**: 32.561
+- **Idade média**: 38,58 anos
+- **Desvio padrão**: ±13,64 anos
+- **Idade mínima**: 17 anos
+- **Idade máxima**: 90 anos
+- **Mediana (50%)**: 37 anos"
+8,Exiba as primeiras 5 linhas do conjunto de dados.,Factual,visualizar_amostra,listar_colunas,0,categorica,1,6.553,2,"Peço desculpas, mas as ferramentas disponíveis não possuem uma função específica para exibir as primeiras N linhas do dataset. O que posso oferecer como alternativa é uma visão geral completa dos dados que já foi exibida acima.
+
+Aqui está um resumo do que encontramos:
+
+## Visão Geral do Dataset **Adult Income**
+
+- **Total de registros**: 32.561
+- **Total de colunas**: 15 (6 numéricas, 9 categóricas/objeto)
+
+### Principais estatísticas descritivas:
+
+| Coluna | Média | Mediana (50%) | Mín | Máx |
+|---|---|---|---|---|
+| **Idade (age)** | 38,6 anos | 37 | 17 | 90 |
+| **Horas/semana (hours_per_week)** | 40,4 h | 40 | 1 | 99 |
+| **Nível educação (education_num)** | 10,1 anos | 10 | 1 | 16 |
+
+### Distribuições categóricas:
+
+- **Renda (income)**: a maioria ganha **<=50K** (24.720 registros) vs **>50K** (7.841)
+- **Sexo**: 21.790 homens, 10.771 mulheres
+- **Raça**: predominantemente **White** (27.816)
+- **Ocupação mais comum**: **Prof-specialty** (4.140)
+- **País de origem**: principalmente **United-States** (29.170)
+- **Classe de trabalho**: **Private** (22.696)
+
+Se você deseja explorar valores específicos de alguma coluna ou fazer filtros, posso ajudar com isso!"
+9,Quais são os diferentes países de origem (native-country) únicos cadastrados?,Factual,listar_valores_unicos,contar_valores,0,lista_strings,1,7.533,1,"Aqui estão os **42 valores únicos** encontrados na coluna `native_country` (país de origem), incluindo a quantidade de registros de cada um:
+
+| País de Origem | Quantidade |
+|---|---|
+| United-States (Estados Unidos) | 29.170 |
+| Mexico (México) | 643 |
+| ? (desconhecido/não informado) | 583 |
+| Philippines (Filipinas) | 198 |
+| Germany (Alemanha) | 137 |
+| Canada (Canadá) | 121 |
+| Puerto-Rico (Porto Rico) | 114 |
+| El-Salvador (El Salvador) | 106 |
+| India (Índia) | 100 |
+| Cuba | 95 |
+| England (Inglaterra) | 90 |
+| Jamaica | 81 |
+| South (Sul - provavelmente Coreia do Sul?) | 80 |
+| China | 75 |
+| Italy (Itália) | 73 |
+| Dominican-Republic (República Dominicana) | 70 |
+| Vietnam (Vietnã) | 67 |
+| Guatemala | 64 |
+| Japan (Japão) | 62 |
+| Poland (Polônia) | 60 |
+| Columbia (Colômbia) | 59 |
+| Taiwan | 51 |
+| Haiti | 44 |
+| Iran (Irã) | 43 |
+| Portugal | 37 |
+| Nicaragua (Nicarágua) | 34 |
+| Peru | 31 |
+| France (França) | 29 |
+| Greece (Grécia) | 29 |
+| Ecuador (Equador) | 28 |
+| Ireland (Irlanda) | 24 |
+| Hong (Hong Kong) | 20 |
+| Trinadad&Tobago (Trinidad e Tobago) | 19 |
+| Cambodia (Camboja) | 19 |
+| Thailand (Tailândia) | 18 |
+| Laos | 18 |
+| Yugoslavia (Iugoslávia) | 16 |
+| Outlying-US(Guam-USVI-etc) (Territórios dos EUA) | 14 |
+| Honduras | 13 |
+| Hungary (Hungria) | 13 |
+| Scotland (Escócia) | 12 |
+| Holand-Netherlands (Holanda/Países Baixos) | 1 |
+
+**Resumo:** Ao todo, há **42 países/territórios únicos** listados (incluindo os 583 registros com ""?"" que representam dados não informados). A grande maioria dos registros é dos **Estados Unidos** (cerca de 29.170), seguido por **México** (643) e **Filipinas** (198). O país com menor frequência é **Holanda/Países Baixos**, com apenas 1 registro."
+10,A coluna income possui valores duplicados?,Factual,verificar_duplicados,contar_valores,0,categorica,1,3.984,1,"A coluna **income** possui apenas **2 valores distintos**:
+
+- **`<=50K`** — 24.720 registros
+- **`>50K`** — 7.841 registros
+
+Isso significa que sim, há muitos **valores duplicados** (repetições de `<=50K` e `>50K`), o que é esperado, já que essa é uma coluna categórica que indica duas faixas salariais (renda ≤ 50 mil ou > 50 mil dólares). Portanto, **os valores se repetem em várias linhas** — isso não é um problema, é a natureza da variável."
+11,Qual é a média de horas trabalhadas por semana agrupada por classe de renda (income)?,Analítica,agrupar_e_agregar,agrupar_e_agregar,1,dict_numerico,0,4.359,1,"A média de horas trabalhadas por semana, agrupada pela classe de renda, é:
+
+| Classe de Renda | Média de Horas/Semana |
+|----------------|----------------------|
+| **<=50K** (até 50 mil) | **≈ 38,84 horas** |
+| **>50K** (acima de 50 mil) | **≈ 45,47 horas** |
+
+**Interpretação:** Pessoas com renda acima de 50 mil dólares anuais trabalham, em média, cerca de **6,6 horas a mais por semana** (aproximadamente 45,5 h vs. 38,8 h) em comparação com aquelas com renda igual ou inferior a 50 mil. Isso sugere que uma carga horária maior está associada a uma maior faixa salarial."
+12,Existe alguma correlação linear entre a idade e as horas semanais trabalhadas?,Analítica,correlacao,correlacao,1,numero_float,0,4.397,1,"A correlação linear de Pearson entre **idade (age)** e **horas semanais trabalhadas (hours_per_week)** é de aproximadamente **0,069**.
+
+### Interpretação
+
+- Esse valor é **muito próximo de zero** (0,069).
+- Isso indica uma **correlação linear praticamente inexistente** entre as duas variáveis.
+- Ou seja, a idade de uma pessoa **não tem relação linear** com a quantidade de horas que ela trabalha por semana. Pessoas mais jovens não tendem a trabalhar significativamente mais ou menos horas do que pessoas mais velhas, ao menos de forma linear.
+
+Se desejar, posso gerar um gráfico de dispersão para visualizar essa relação."
+13,Gere um gráfico de dispersão cruzando age e hours_per_week.,Analítica,gerar_grafico,gerar_grafico,1,categorica,1,6.564,1,"Aqui está o gráfico de dispersão entre **age** (idade) e **hours_per_week** (horas trabalhadas por semana):
+
+![Gráfico de Dispersão: age x hours_per_week](graficos/grafico_1781136764.png)
+
+**Observações sobre o gráfico:**
+
+- **Eixo X (horizontal):** Idade (`age`) — variando de aproximadamente 17 a 90 anos.
+- **Eixo Y (vertical):** Horas por semana (`hours_per_week`) — variando de 0 a cerca de 100 horas.
+- Percebe-se uma maior concentração de pontos entre **20 e 60 anos** e entre **30 e 50 horas semanais**, o que faz sentido, já que essa faixa etária corresponde à população economicamente ativa em jornadas típicas de trabalho.
+- Há **várias faixas horizontais** bem definidas (ex: 40h, 50h, 60h), indicando que muitos registros agrupam-se em jornadas ""redondas"" (como 40h semanais — padrão de trabalho integral).
+- Pontos acima de 80h ou abaixo de 10h são menos frequentes, possivelmente representando casos atípicos (trabalho em tempo parcial ou horas extras extremas).
+- Não parece haver uma correlação linear forte clara entre idade e horas trabalhadas — a dispersão é bem espalhada."
+14,Qual é a distribuição percentual do nível de escolaridade (education) no dataset?,Analítica,contar_valores,contar_valores,1,lista_strings,1,8.944,2,"O dataset possui **32.561** registros. Agora posso calcular os percentuais. Vou organizar os resultados:
+
+| Nível de Escolaridade | Frequência | Percentual |
+|---|---|---|
+| **HS-grad** (Ensino Médio completo) | 10.501 | **32,25%** |
+| **Some-college** (Faculdade incompleta) | 7.291 | **22,39%** |
+| **Bachelors** (Graduação) | 5.355 | **16,45%** |
+| **Masters** (Mestrado) | 1.723 | **5,29%** |
+| **Assoc-voc** (Técnico profissionalizante) | 1.382 | **4,24%** |
+| **11th** (11º ano) | 1.175 | **3,61%** |
+| **Assoc-acdm** (Técnico acadêmico) | 1.067 | **3,28%** |
+| **10th** (10º ano) | 933 | **2,87%** |
+| **7th-8th** (7ª-8ª série) | 646 | **1,98%** |
+| **Prof-school** (Escola profissionalizante) | 576 | **1,77%** |
+| **9th** (9º ano) | 514 | **1,58%** |
+| **12th** (12º ano) | 433 | **1,33%** |
+| **Doctorate** (Doutorado) | 413 | **1,27%** |
+| **5th-6th** (5ª-6ª série) | 333 | **1,02%** |
+| **1st-4th** (1ª-4ª série) | 168 | **0,52%** |
+| **Preschool** (Pré-escola) | 51 | **0,16%** |
+| **Total** | **32.561** | **100%** |
+
+### Principais observações:
+
+1. **Mais de 70% das pessoas** têm no máximo o Ensino Médio completo ou alguma faculdade incompleta (HS-grad + Some-college).
+2. **Apenas ~23%** possuem ensino superior completo (Bachelors, Masters, Doctorate, Prof-school).
+3. **Cerca de 7,4%** têm ensino fundamental incompleto (da 1ª à 8ª série).
+4. O nível mais comum é **HS-grad (Ensino Médio completo)**, que sozinho representa quase **1/3 do dataset**."
+15,Mostre um histograma mostrando a distribuição da idade da população amostrada.,Analítica,gerar_grafico,gerar_grafico,1,categorica,1,4.502,1,"Aqui está o histograma com a distribuição da idade da população amostrada no dataset **Adult Income**:
+
+![Histograma da Idade](graficos/grafico_1781136779.png)
+
+Observações principais sobre a distribuição:
+
+- A **faixa etária predominante** está entre aproximadamente **25 e 45 anos**, concentrando a maior parte da amostra.
+- A distribuição é **assimétrica à direita** (cauda alongada para idades mais altas).
+- Há poucos registros de pessoas muito jovens (menores de 20 anos) e também de pessoas acima dos 70 anos.
+- O pico principal ocorre por volta dos **30-35 anos**, indicando que a força de trabalho da amostra é majoritariamente adulta em idade produtiva."
+16,Existem outliers ou valores discrepantes gritantes na coluna de horas trabalhadas?,Analítica,detectar_outliers,detectar_outliers,1,categorica,1,8.711,2,"Excelente! A análise revela dados bastante interessantes. Vamos aos resultados:
+
+## 📊 Análise de Outliers em `hours_per_week`
+
+**Sim, existem muitos outliers na coluna de horas trabalhadas!**
+
+### Método IQR:
+- **Q1 (1º quartil):** 40 horas
+- **Q3 (3º quartil):** 45 horas
+- **IQR:** 5 horas
+- **Limite inferior:** 32,5 horas
+- **Limite superior:** 52,5 horas
+- **Total de outliers:** **9.008 registros (27,66% do dataset)**
+
+### Principais valores outliers:
+
+**Acima do limite superior (> 52,5h):**
+- **60 horas** → 1.475 pessoas
+- **70 horas** → 291 pessoas
+- **80 horas** → 133 pessoas
+- **99 horas** → 85 pessoas (praticamente o dobro de uma semana normal!)
+- Há até quem trabalhe **98h, 96h, 90h** por semana
+
+**Abaixo do limite inferior (< 32,5h):**
+- **20 horas** → 1.224 pessoas
+- **15 horas** → 404 pessoas
+- **10 horas** → 278 pessoas
+- **5 horas** → 60 pessoas
+- **1 hora** → 20 pessoas (sim, 1 hora por semana!)
+
+### 🔎 Conclusão:
+A distribuição das horas trabalhadas é bem concentrada em torno de **40h/semana** (padrão CLT/jornada integral), mas há **quase 28% de registros considerados outliers** — um percentual altíssimo. Isso acontece porque o IQR é muito estreito (apenas 5 horas), então qualquer coisa fora de ~33h–53h já é outlier.
+
+Os outliers mais gritantes são:
+- **Muito abaixo:** 1h, 2h, 3h, 4h, 5h por semana (trabalho praticamente simbólico)
+- **Muito acima:** 80h, 90h, 98h, 99h por semana (cargas extremas de trabalho, quase 14h/dia sem folga)"
+17,Qual é a proporção de homens e mulheres que ganham mais de 50k por ano?,Analítica,agrupar_e_agregar,contar_valores,0,dict_numerico,0,7.794,3,"Agora já tenho os dados necessários. Vamos aos cálculos.
+
+**Dados gerais:**
+- Total de homens: **21.790**
+- Total de mulheres: **10.771**
+- Total de pessoas com renda >50K: **7.841**
+
+**Entre quem ganha >50K:**
+- Homens: **6.662**
+- Mulheres: **1.179** (7.841 - 6.662)
+
+---
+
+### Proporção entre quem ganha mais de 50K
+
+| Sexo | Quantidade >50K | Proporção dentro de quem ganha >50K |
+|------|:--------------:|:----------------------------------:|
+| 👨 Homens | 6.662 | **85,0%** |
+| 👩 Mulheres | 1.179 | **15,0%** |
+| **Total** | **7.841** | **100%** |
+
+### Proporção dentro de cada sexo
+
+Para complementar:
+
+- **Homens:** 6.662 de 21.790 (≈ **30,6%** dos homens ganham >50K)
+- **Mulheres:** 1.179 de 10.771 (≈ **10,9%** das mulheres ganham >50K)
+
+**Resumo:** Entre as pessoas que ganham mais de 50K por ano, **85% são homens e apenas 15% são mulheres**. Olhando de outra forma, cerca de **30,6% dos homens** atingem essa faixa de renda, contra **10,9% das mulheres**."
+18,Crie um gráfico de barras vertical comparando a quantidade de pessoas por raça (race).,Analítica,gerar_grafico,gerar_grafico,1,categorica,1,3.451,1,"Aqui está o gráfico de barras vertical mostrando a quantidade de pessoas por raça:
+
+![Gráfico de barras por raça](graficos/grafico_1781136800.png)
+
+O gráfico mostra a distribuição de pessoas no dataset **Adult Income** de acordo com a categoria **race** (raça). As barras representam a contagem de indivíduos para cada grupo racial presente no conjunto de dados."
+19,Qual profissão (occupation) apresenta a maior mediana de horas trabalhadas por semana?,Analítica,agrupar_e_agregar,agrupar_e_agregar,1,categorica,1,5.233,1,"Analisando os resultados, temos o seguinte:
+
+A grande maioria das ocupações apresenta **mediana de 40 horas semanais**. Porém, há duas exceções com medianas **menores**:
+
+- **Priv-house-serv** (serviço doméstico particular): **35 horas**
+- **?** (ocupação desconhecida): **36 horas**
+
+Dessa forma, **nenhuma profissão se destaca com uma mediana acima de 40 horas**. Várias ocupações estão empatadas com a **mediana máxima de 40 horas por semana**. As ocupações nesse grupo de maior mediana são:
+
+- Adm-clerical
+- Armed-Forces
+- Craft-repair
+- Exec-managerial
+- Farming-fishing
+- Handlers-cleaners
+- Machine-op-inspct
+- Other-service
+- Prof-specialty
+- Protective-serv
+- Sales
+- Tech-support
+- Transport-moving
+
+**Resposta:** A maior mediana de horas trabalhadas por semana é **40 horas**, e **diversas ocupações** compartilham esse valor, como **Exec-managerial, Prof-specialty, Sales, Craft-repair, Protective-serv, Tech-support**, entre outras."
+20,"Se filtrarmos apenas pessoas maiores de 40 anos, qual é o nível de instrução mais comum?",Analítica,filtrar_e_analisar,descrever_dados,0,categorica,1,5.4,3,"O resultado do filtro já nos dá a resposta diretamente. Analisando os dados das **13.443 pessoas maiores de 40 anos**:
+
+O nível de instrução mais comum é **HS-grad** (High School Graduate / Ensino Médio Completo), com **4.343 pessoas** nessa faixa etária.
+
+Isso representa cerca de **32,3%** das pessoas com mais de 40 anos no dataset."
+21,A variância da idade é muito alta para as pessoas que trabalham no setor privado?,Analítica,agrupar_e_agregar,listar_colunas,0,numero_float,0,11.283,4,"Aqui está a análise completa:
+
+---
+
+## 📊 Análise da variância da idade no setor privado
+
+### Resultados
+
+| Grupo | Média de idade | Desvio padrão | **Variância** |
+|---|---|---|---|
+| **Setor Privado** (22.696 pessoas) | 36,8 anos | 12,83 | **~164,6 anos²** |
+| **Dataset completo** (32.561 pessoas) | 38,6 anos | 13,64 | **~186,1 anos²** |
+
+### Conclusão
+
+**Não, a variância da idade no setor privado não é alta — na verdade, ela é um pouco menor que a do dataset como um todo.**
+
+- A variância no setor privado é de aproximadamente **164,6 anos²**, enquanto no dataset completo é de **186,1 anos²**.
+- Isso indica que as idades das pessoas no setor privado são **ligeiramente mais concentradas em torno da média** (36,8 anos) do que no restante da população.
+- A faixa etária também vai de **17 a 90 anos** em ambos os grupos, mas o desvio padrão menor (12,83 vs 13,64) confirma que a dispersão é um pouco menor no setor privado.
+
+Portanto, a variância da idade no setor privado está **dentro de um patamar normal** e é até ligeiramente inferior à média geral do dataset."
+22,Apresente uma matriz de correlação entre todas as variáveis numéricas disponíveis.,Analítica,correlacao,listar_colunas,0,lista_strings,1,16.487,16,"Aqui está a **matriz de correlação de Pearson** entre todas as **6 variáveis numéricas** do dataset **Adult Income**:
+
+|                     | age       | fnlwgt    | education_num | capital_gain | capital_loss | hours_per_week |
+|---------------------|-----------|-----------|---------------|--------------|--------------|----------------|
+| **age**             | 1.0000    | **-0.0766** | **0.0365**     | **0.0777**   | **0.0578**   | **0.0688**     |
+| **fnlwgt**          | -0.0766   | 1.0000    | **-0.0432**    | **0.0004**   | **-0.0103**  | **-0.0188**    |
+| **education_num**   | 0.0365    | -0.0432   | 1.0000         | **0.1226**   | **0.0799**   | **0.1481**     |
+| **capital_gain**    | 0.0777    | 0.0004    | 0.1226         | 1.0000       | **-0.0316**  | **0.0784**     |
+| **capital_loss**    | 0.0578    | -0.0103   | 0.0799         | -0.0316      | 1.0000       | **0.0543**     |
+| **hours_per_week**  | 0.0688    | -0.0188   | 0.1481         | 0.0784       | 0.0543       | 1.0000         |
+
+---
+
+### Principais observações:
+
+1. **Correlações muito fracas no geral** – Todas as variáveis apresentam correlações muito baixas (próximas de zero), indicando que **não há relações lineares fortes** entre elas.
+
+2. **Maior correlação encontrada**: `education_num` x `hours_per_week` (**r = 0.148**) – Uma correlação positiva, porém ainda fraca. Pessoas com mais anos de educação tendem a trabalhar um pouco mais horas por semana.
+
+3. **Segunda maior**: `education_num` x `capital_gain` (**r = 0.123**) – Leve tendência de que maior nível educacional esteja associado a ganhos de capital mais altos.
+
+4. **Correlações negativas mais notáveis**:
+   - `age` x `fnlwgt` (**r = -0.077**) – Quanto maior a idade, levemente menor o peso amostral (*fnlwgt*).
+   - `fnlwgt` x `education_num` (**r = -0.043**) – Relação inversa muito fraca.
+
+5. `capital_gain` x `capital_loss` (**r = -0.032**) – Relação negativa praticamente nula, indicando que essas variáveis são praticamente independentes.
+
+**Conclusão**: Neste dataset, as variáveis numéricas **não possuem correlações lineares expressivas** entre si. A maior parte da variação dos dados não é explicada por relações lineares simples entre essas colunas."
+23,Qual o desvio padrão da coluna capital-gain?,Analítica,resumo_estatistico,listar_colunas,0,numero_float,0,5.539,2,"O desvio padrão da coluna **capital_gain** é **7.385,29** (aproximadamente).
+
+Em valores mais precisos: **7.385,2921**.
+
+Isso indica uma variabilidade muito alta nos ganhos de capital, o que faz sentido pois a média é de aproximadamente **R\$ 1.077,65** (ou dólares), com valores que vão de **0** até **99.999**. A grande maioria das pessoas (75% dos dados) tem capital_gain igual a **0**, mas existem alguns valores extremamente altos que puxam o desvio padrão para cima."
+24,Gere um boxplot da idade separado por gênero para identificar assimetrias.,Analítica,gerar_grafico,gerar_grafico,1,categorica,1,5.732,1,"Aqui está o boxplot da idade separado por gênero:
+
+![Boxplot da idade por gênero](graficos/grafico_1781136848.png)
+
+### Principais observações sobre assimetrias:
+
+1. **Distribuição similar**: Ambos os sexos apresentam uma distribuição de idade bastante semelhante, com a mediana (linha central do box) próxima dos mesmos valores.
+
+2. **Simetria relativa**: Os boxes (intervalo interquartil) parecem relativamente simétricos para ambos os gêneros, indicando que não há assimetria muito acentuada na distribuição das idades.
+
+3. **Outliers**: Ambos os grupos apresentam outliers na faixa etária mais alta (acima do bigode superior), mostrando que há indivíduos mais velhos fora do padrão típico em ambos os sexos.
+
+4. **Variação similar**: A amplitude total (do mínimo ao máximo, excluindo outliers) é parecida entre homens e mulheres, sugerindo que a dispersão das idades é homogênea entre os gêneros.
+
+Conclusão: **Não há assimetria significativa** entre as idades de homens e mulheres neste dataset. As distribuições são bastante equilibradas, com ambos os grupos apresentando idades médias e medianas muito próximas."
+25,Quais são as 3 ocupações menos frequentes no dataset?,Analítica,contar_valores,contar_valores,1,lista_strings,1,3.761,1,"As **3 ocupações menos frequentes** no dataset são:
+
+1. **Armed-Forces** (Forças Armadas) — apenas **9** registros
+2. **Priv-house-serv** (Serviço doméstico particular) — **149** registros
+3. **Protective-serv** (Serviços de proteção) — **649** registros
+
+Vale notar que a categoria **""?""** (desconhecida) tem 1.843 registros, mas não é considerada uma ocupação de fato, e sim dado faltante. Desconsiderando essa categoria, as três acima são as menos frequentes entre as ocupações listadas."
+26,Faz um negócio aí com a coluna age.,Ambígua/Inválida,nenhuma,descrever_dados,0,categorica,0,12.702,6,"✅ **Negócio feito!** Aqui vai o resumo completo da coluna **age**:
+
+---
+
+## 📊 Análise da coluna **age** (Idade)
+
+### Estatísticas básicas
+| Medida | Valor |
+|--------|-------|
+| **Média** | ~38,6 anos |
+| **Mediana** | 37 anos |
+| **Mínimo** | 17 anos |
+| **Máximo** | 90 anos |
+| **1º quartil (25%)** | 28 anos |
+| **3º quartil (75%)** | 48 anos |
+
+### 📈 Distribuição
+A idade segue uma distribuição **levemente assimétrica à direita** (com uma ""cauda"" de pessoas mais velhas). O gráfico de histograma mostra um pico bem na faixa dos **30-40 anos**.
+
+### 🚨 Outliers
+- **143 outliers** (~0,44% dos dados) acima de **78 anos**.
+- Não há outliers inferiores (limite inferior deu -2, então não faz sentido).
+- São pessoas com **79 a 90 anos** — casos atípicos, mas possíveis.
+
+### 💰 Relação com a renda
+| Renda | Idade média |
+|------|------------|
+| **≤50K** | **~36,8 anos** |
+| **>50K** | **~44,2 anos** |
+
+➡️ Pessoas com renda acima de 50K são, em média, **quase 8 anos mais velhas** que as de baixa renda. Isso sugere que a experiência/carreira mais avançada está correlacionada com salários maiores.
+
+### 👫 Idade por sexo
+| Sexo | Idade média |
+|------|------------|
+| **Feminino** | **~36,9 anos** |
+| **Masculino** | **~39,4 anos** |
+
+Homens são, em média, ~2,5 anos mais velhos que mulheres no dataset.
+
+---
+
+📸 **Gráficos gerados:**
+- `graficos/grafico_1781136860.png` — Histograma da idade
+- `graficos/grafico_1781136862.png` — Boxplot da idade
+
+Quer que eu aprofunde em algum desses tópicos?"
+27,Qual é a temperatura média em Curitiba hoje?,Ambígua/Inválida,nenhuma,nenhuma,1,categorica,1,2.293,0,"Essa pergunta não pode ser respondida com o dataset **Adult Income**. 
+
+O dataset contém apenas dados demográficos e socioeconômicos (como idade, educação, ocupação, renda, etc.) de pessoas, e **não inclui nenhuma informação sobre temperatura, clima ou localização atual de Curitiba**.
+
+Para responder essa pergunta, seria necessário acessar dados meteorológicos em tempo real, o que está fora do escopo das ferramentas e dados disponíveis."
+28,Me diga quem é o usuário mais rico cruzando com o banco de dados do Google.,Ambígua/Inválida,nenhuma,nenhuma,1,categorica,0,3.236,0,"Não é possível responder a essa pergunta com os dados disponíveis. O dataset **Adult Income** contém informações demográficas e de renda de pessoas (adultos), mas **não possui nenhuma coluna relacionada a usuários de banco de dados do Google** ou qualquer identificador que permita cruzar informações com outros bancos de dados externos.
+
+As colunas disponíveis são:
+
+- Idade, classe de trabalho, educação, estado civil, ocupação, raça, sexo, ganhos de capital, horas trabalhadas por semana, país de origem, renda (<=50K ou >50K), entre outras.
+
+Não há CPF, e-mail, nome, ID de usuário ou qualquer chave que conecte esses dados a um sistema externo como o Google.
+
+Se você quiser, posso analisar quem tem a maior renda (ou maior capital gain) dentro deste dataset. Basta me perguntar!"
+29,Quero que você exclua todas as linhas onde a idade seja menor que 18.,Ambígua/Inválida,nenhuma,nenhuma,1,categorica,1,2.526,0,"Desculpe, mas **não posso excluir ou modificar dados do dataset**. As ferramentas disponíveis são apenas para **leitura e análise exploratória** (consultas, estatísticas, gráficos, etc.), não há nenhuma ferramenta que permita alterar, excluir ou inserir registros.
+
+O que posso fazer é ajudá-lo a **analisar** os dados filtrados. Por exemplo, posso usar a função `filtrar` para ver estatísticas apenas das pessoas com idade >= 18 anos. Quer que eu faça isso?"
+30,O que você acha da política econômica atual?,Ambígua/Inválida,nenhuma,nenhuma,1,categorica,1,2.458,0,"Desculpe, mas essa pergunta não tem relação com a análise exploratória de dados do dataset **Adult Income** (Census Income). Meu papel é exclusivamente analisar dados desse conjunto utilizando as ferramentas disponíveis.
+
+Se você tiver perguntas sobre os dados do dataset — como renda, idade, educação, horas trabalhadas, ocupação, etc. — ficarei feliz em ajudar! 
+
+Por exemplo, você pode perguntar:
+- Qual a média de horas trabalhadas por semana?
+- Como a renda se distribui por nível de educação?
+- Existe diferença de renda entre homens e mulheres?"
