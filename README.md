@@ -4,12 +4,6 @@ Projeto desenvolvido para a disciplina de Processamento de Linguagem Natural (NL
 
 O objetivo é implementar um agente capaz de realizar Análise Exploratória de Dados (EDA) sobre um dataset CSV utilizando Large Language Models (LLMs) e ferramentas (tools) especializadas.
 
-## Integrantes
-
-* Nome 1
-* Nome 2
-* Nome 3
-* Nome 4
 
 ## Dataset Utilizado
 
